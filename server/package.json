@@ -1,0 +1,31 @@
+{
+  "name": "estonia-trails-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.json && node ./scripts/copy-non-ts.mjs",
+    "db:init": "node ./scripts/db-init.mjs",
+    "import:osm:overpass": "node ./scripts/import-osm-overpass.mjs",
+    "import:maaamet:wfs": "node ./scripts/import-maaamet-wfs.mjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.12.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20.11.30",
+    "@types/pg": "^8.16.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.4.5"
+  }
+}
